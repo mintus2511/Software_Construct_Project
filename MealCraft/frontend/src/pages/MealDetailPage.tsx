@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import {
-    ArrowLeft,
-    Heart,
-    Clock,
-    ForkKnife,
-    Globe,
-    ArrowRight,
+    ArrowLeftIcon,
+    HeartIcon,
+    ClockIcon,
+    ForkKnifeIcon,
+    GlobeIcon,
+    ArrowRightIcon,
 } from "@phosphor-icons/react";
 import Footer from "../components/Footer";
 
@@ -372,7 +372,7 @@ const MealDetailPage: React.FC = () => {
                         className="w-9 h-9 rounded-full bg-white/90 shadow flex items-center justify-center hover:bg-white transition-colors"
                         aria-label="Quay lại"
                     >
-                        <ArrowLeft weight="bold" size={20} className="text-foreground" />
+                        <ArrowLeftIcon weight="bold" size={20} className="text-foreground" />
                     </button>
 
                     <h1 className="font-sans font-semibold text-base text-foreground bg-white/90 px-3 py-1 rounded-full shadow truncate max-w-[180px]">
@@ -384,7 +384,7 @@ const MealDetailPage: React.FC = () => {
                         className="w-9 h-9 rounded-full bg-white/90 shadow flex items-center justify-center hover:bg-white transition-colors"
                         aria-label="Yêu thích"
                     >
-                        <Heart
+                        <HeartIcon
                             weight={liked ? "fill" : "regular"}
                             size={20}
                             className={liked ? "text-red-500" : "text-foreground"}
@@ -424,7 +424,7 @@ const MealDetailPage: React.FC = () => {
             <main className="flex-1 max-w-[480px] mx-auto w-full px-4 pb-10">
                 <div className="flex items-center justify-around py-5 border-b border-border">
                     <div className="flex flex-col items-center gap-1">
-                        <Clock weight="duotone" size={22} className="text-primary" />
+                        <ClockIcon weight="duotone" size={22} className="text-primary" />
                         <span className="font-inter text-[11px] text-gray-400">Thời gian</span>
                         <span className="font-sans font-semibold text-sm text-foreground">
                             {meal.time}
@@ -434,7 +434,7 @@ const MealDetailPage: React.FC = () => {
                     <div className="w-px h-10 bg-border" />
 
                     <div className="flex flex-col items-center gap-1">
-                        <ForkKnife weight="duotone" size={22} className="text-primary" />
+                        <ForkKnifeIcon weight="duotone" size={22} className="text-primary" />
                         <span className="font-inter text-[11px] text-gray-400">
                             Nguyên liệu
                         </span>
@@ -446,7 +446,7 @@ const MealDetailPage: React.FC = () => {
                     <div className="w-px h-10 bg-border" />
 
                     <div className="flex flex-col items-center gap-1">
-                        <Globe weight="duotone" size={22} className="text-primary" />
+                        <GlobeIcon weight="duotone" size={22} className="text-primary" />
                         <span className="font-inter text-[11px] text-gray-400">Vùng miền</span>
                         <span className="font-sans font-semibold text-sm text-foreground">
                             {meal.region}
@@ -503,7 +503,7 @@ const MealDetailPage: React.FC = () => {
                             Tham khảo liên quan
                         </h3>
                         <button className="flex items-center gap-1 text-primary text-sm font-inter font-medium hover:underline">
-                            <ArrowRight weight="bold" size={14} />
+                            <ArrowRightIcon weight="bold" size={14} />
                         </button>
                     </div>
 

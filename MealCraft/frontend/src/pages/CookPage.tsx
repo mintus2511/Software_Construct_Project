@@ -1,18 +1,18 @@
 import React, { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-    ArrowLeft,
-    MagnifyingGlass,
-    X,
-    Plus,
-    Clock,
-    CheckCircle,
-    Warning,
+    ArrowLeftIcon,
+    MagnifyingGlassIcon,
+    XIcon,
+    PlusIcon,
+    ClockIcon,
+    CheckCircleIcon,
+    WarningIcon,
 } from "@phosphor-icons/react";
 import { Badge } from "../components/ui/badge";
 import BottomNav from "../components/BottomNav";
 import Footer from "../components/Footer";
-import { recipes, popularIngredients } from "../data/recipe";
+import { recipes, popularIngredients } from "../data/recipes";
 
 const CookPage: React.FC = () => {
     const navigate = useNavigate();
@@ -87,7 +87,7 @@ const CookPage: React.FC = () => {
                         className="p-2 rounded-full hover:bg-gray-100 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
                         aria-label="Quay lại trang chủ"
                     >
-                        <ArrowLeft weight="bold" size={24} />
+                        <ArrowLeftIcon weight="bold" size={24} />
                     </button>
 
                     <h1 className="font-sans font-bold text-lg text-foreground">
@@ -112,7 +112,7 @@ const CookPage: React.FC = () => {
 
                 <section className="mb-4" aria-label="Nhập nguyên liệu">
                     <div className="relative mb-3">
-                        <MagnifyingGlass
+                        <MagnifyingGlassIcon
                             weight="duotone"
                             size={20}
                             className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
@@ -139,7 +139,7 @@ const CookPage: React.FC = () => {
                                     aria-label={`Xóa nguyên liệu ${ing}`}
                                 >
                                     {ing}
-                                    <X weight="bold" size={12} />
+                                    <XIcon weight="bold" size={12} />
                                 </button>
                             ))}
 
@@ -167,7 +167,7 @@ const CookPage: React.FC = () => {
                                     className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-gray-100 text-gray-600 text-sm font-inter transition-all duration-100 ease-in hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-primary"
                                     aria-label={`Thêm nguyên liệu ${ing}`}
                                 >
-                                    <Plus weight="bold" size={12} />
+                                    <PlusIcon weight="bold" size={12} />
                                     {ing}
                                 </button>
                             ))}
@@ -254,20 +254,20 @@ const CookPage: React.FC = () => {
                                     </p>
 
                                     <div className="flex items-center gap-1 text-gray-500">
-                                        <Clock weight="duotone" size={12} />
+                                        <ClockIcon weight="duotone" size={12} />
                                         <span className="font-inter text-xs">{recipe.time}</span>
                                     </div>
 
                                     <div className="flex items-center justify-between mt-1">
                                         <div className="flex items-center gap-1">
                                             {isComplete ? (
-                                                <CheckCircle
+                                                <CheckCircleIcon
                                                     weight="duotone"
                                                     size={14}
                                                     className="text-green-600"
                                                 />
                                             ) : (
-                                                <Warning
+                                                <WarningIcon
                                                     weight="duotone"
                                                     size={14}
                                                     className="text-amber-500"

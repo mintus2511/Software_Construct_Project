@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-    Lightning,
-    ShieldCheck,
-    CheckCircle,
-    Eye,
-    EyeSlash,
+    LightningIcon,
+    ShieldCheckIcon,
+    CheckCircleIcon,
+    EyeIcon,
+    EyeSlashIcon,
 } from "@phosphor-icons/react";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
@@ -60,7 +60,7 @@ const SignupPage: React.FC = () => {
                     role="banner"
                 >
                     <div className="flex items-center gap-2">
-                        <Lightning weight="duotone" size={28} className="text-foreground" />
+                        <LightningIcon weight="duotone" size={28} className="text-foreground" />
                         <span className="font-sans font-bold text-xl text-foreground">
                             MealCraft
                         </span>
@@ -149,7 +149,7 @@ const SignupPage: React.FC = () => {
                                 aria-invalid={!emailValid}
                             />
                             {emailValid && email && (
-                                <CheckCircle
+                                <CheckCircleIcon
                                     weight="duotone"
                                     size={20}
                                     className="absolute right-3 top-1/2 -translate-y-1/2 text-green-600"
@@ -200,9 +200,9 @@ const SignupPage: React.FC = () => {
                                 aria-label={showPassword ? "Ẩn mật khẩu" : "Hiện mật khẩu"}
                             >
                                 {showPassword ? (
-                                    <EyeSlash weight="duotone" size={20} />
+                                    <EyeSlashIcon weight="duotone" size={20} />
                                 ) : (
-                                    <Eye weight="duotone" size={20} />
+                                    <EyeIcon weight="duotone" size={20} />
                                 )}
                             </button>
                         </div>
@@ -261,7 +261,7 @@ const SignupPage: React.FC = () => {
                 </div>
 
                 <div className="mt-6 flex items-start gap-2 bg-gray-50 rounded-md p-3 border border-border">
-                    <ShieldCheck
+                    <ShieldCheckIcon
                         weight="duotone"
                         size={20}
                         className="text-green-600 flex-shrink-0 mt-0.5"
@@ -281,7 +281,7 @@ const SignupPage: React.FC = () => {
 
                 <div className="mt-8 text-center">
                     <p className="font-inter text-xs text-gray-400 flex items-center justify-center gap-1">
-                        Made with <Lightning weight="duotone" size={14} className="text-foreground" /> by
+                        Made with <LightningIcon weight="duotone" size={14} className="text-foreground" /> by
                         MealCraft
                     </p>
                 </div>

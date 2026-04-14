@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { MapPin, Clock, ForkKnife, Users } from "@phosphor-icons/react";
+import { MapPinIcon, ClockIcon, ForkKnifeIcon, UsersIcon} from "@phosphor-icons/react";
 import BottomNav from "../components/BottomNav";
 import Footer from "../components/Footer";
 
@@ -83,7 +83,7 @@ const OrderPage: React.FC = () => {
             >
                 <div className="max-w-[480px] mx-auto h-full flex items-center gap-2 px-4">
                     <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                        <ForkKnife weight="fill" size={18} className="text-white" />
+                        <ForkKnifeIcon weight="fill" size={18} className="text-white" />
                     </div>
                     <h1 className="font-sans font-bold text-lg text-foreground">
                         Đặt món nhóm
@@ -108,7 +108,7 @@ const OrderPage: React.FC = () => {
                         Vị trí của bạn
                     </label>
                     <div className="relative mb-4">
-                        <MapPin
+                        <MapPinIcon
                             weight="duotone"
                             size={18}
                             className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
@@ -128,7 +128,7 @@ const OrderPage: React.FC = () => {
                                 Thời gian
                             </label>
                             <div className="relative">
-                                <Clock
+                                <ClockIcon
                                     weight="duotone"
                                     size={16}
                                     className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
@@ -148,7 +148,7 @@ const OrderPage: React.FC = () => {
                                 Sở thích
                             </label>
                             <div className="relative">
-                                <ForkKnife
+                                <ForkKnifeIcon
                                     weight="duotone"
                                     size={16}
                                     className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
@@ -201,7 +201,7 @@ const OrderPage: React.FC = () => {
                                     </div>
 
                                     <div className="flex items-center gap-1 text-orange-500">
-                                        <Clock weight="duotone" size={13} />
+                                        <ClockIcon weight="duotone" size={13} />
                                         <span className="font-inter text-xs font-semibold">
                                             {group.time}
                                         </span>
@@ -213,7 +213,7 @@ const OrderPage: React.FC = () => {
                                 </h3>
 
                                 <div className="flex items-center gap-1 text-gray-400 mb-3">
-                                    <MapPin weight="duotone" size={13} />
+                                    <MapPinIcon weight="duotone" size={13} />
                                     <span className="font-inter text-xs">{group.location}</span>
                                 </div>
 
@@ -231,7 +231,7 @@ const OrderPage: React.FC = () => {
                                         </div>
 
                                         <span className="font-inter text-xs text-gray-400 ml-2 flex items-center gap-1">
-                                            <Users weight="duotone" size={12} />+{group.members} người
+                                            <UsersIcon weight="duotone" size={12} />+{group.members} người
                                             tham gia
                                         </span>
                                     </div>

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Clock, Fire, ArrowRight } from "@phosphor-icons/react";
+import { ArrowRightIcon, FireIcon, ClockIcon } from "@phosphor-icons/react";
 import { Badge } from "../components/ui/badge";
 import TopBar from "../components/TopBar";
 import BottomNav from "../components/BottomNav";
 import Footer from "../components/Footer";
-import { recipes } from "../data/recipe";
+import { recipes } from "../data/recipes";
 
 const categoryFilters = ["Tất cả", "Châu Á"];
 
@@ -48,7 +48,7 @@ const HomePage: React.FC = () => {
                             aria-label="Xem thêm gợi ý"
                         >
                             Xem thêm
-                            <ArrowRight weight="bold" size={14} />
+                            <ArrowRightIcon weight="bold" size={14} />
                         </button>
                     </div>
 
@@ -87,7 +87,7 @@ const HomePage: React.FC = () => {
 
                                 <div className="absolute bottom-0 left-0 right-0 p-3">
                                     <div className="flex items-center gap-2 mb-1">
-                                        <Fire weight="fill" size={12} className="text-orange-400" />
+                                        <FireIcon weight="fill" size={12} className="text-orange-400" />
                                         <span className="text-white/90 text-xs font-inter">
                                             {recipe.categoryVi}
                                         </span>
@@ -96,7 +96,7 @@ const HomePage: React.FC = () => {
                                         {recipe.titleVi}
                                     </p>
                                     <div className="flex items-center gap-1 text-white/80">
-                                        <Clock size={12} />
+                                        <ClockIcon size={12} />
                                         <span className="text-xs font-inter">{recipe.time}</span>
                                     </div>
                                 </div>

@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
-    ArrowLeft,
-    Info,
-    Plus,
-    PaperPlaneTilt,
-    Clock,
+    ArrowLeftIcon,
+    InfoIcon,
+    PlusIcon,
+    PaperPlaneTiltIcon,
+    ClockIcon,
 } from "@phosphor-icons/react";
 
 interface Message {
@@ -112,7 +112,7 @@ const GroupChatPage: React.FC = () => {
                         className="p-2 rounded-full hover:bg-gray-100 transition-colors"
                         aria-label="Quay lại"
                     >
-                        <ArrowLeft weight="bold" size={22} className="text-foreground" />
+                        <ArrowLeftIcon weight="bold" size={22} className="text-foreground" />
                     </button>
 
                     <h1 className="font-sans font-bold text-base text-foreground truncate max-w-[200px]">
@@ -123,14 +123,14 @@ const GroupChatPage: React.FC = () => {
                         className="p-2 rounded-full hover:bg-gray-100 transition-colors"
                         aria-label="Thông tin nhóm"
                     >
-                        <Info weight="regular" size={22} className="text-foreground" />
+                        <InfoIcon weight="regular" size={22} className="text-foreground" />
                     </button>
                 </div>
             </header>
 
             <div className="fixed top-[56px] left-0 right-0 z-40 max-w-[480px] mx-auto">
                 <div className="bg-orange-50 border-b border-orange-200 flex items-center gap-2 px-4 py-2.5">
-                    <Clock
+                    <ClockIcon
                         weight="duotone"
                         size={16}
                         className="text-orange-500 flex-shrink-0"
@@ -209,7 +209,7 @@ const GroupChatPage: React.FC = () => {
             <div className="fixed bottom-0 left-0 right-0 max-w-[480px] mx-auto bg-white border-t border-border px-4 py-3">
                 <div className="flex items-center gap-2">
                     <button className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors flex-shrink-0">
-                        <Plus weight="bold" size={18} className="text-gray-500" />
+                        <PlusIcon weight="bold" size={18} className="text-gray-500" />
                     </button>
 
                     <input
@@ -226,7 +226,7 @@ const GroupChatPage: React.FC = () => {
                         className="w-10 h-10 rounded-full bg-primary flex items-center justify-center hover:bg-primary/90 transition-colors flex-shrink-0 disabled:opacity-50"
                         aria-label="Gửi"
                     >
-                        <PaperPlaneTilt weight="fill" size={18} className="text-white" />
+                        <PaperPlaneTiltIcon weight="fill" size={18} className="text-white" />
                     </button>
                 </div>
 

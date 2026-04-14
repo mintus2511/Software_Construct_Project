@@ -1,11 +1,11 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { House, ForkKnife, ShoppingCart } from "@phosphor-icons/react";
+import { HouseIcon, ForkKnifeIcon, ShoppingCartIcon } from "@phosphor-icons/react";
 
 const navItems = [
-    { label: "Khám phá", icon: House, path: "/home" },
-    { label: "Nấu ăn", icon: ForkKnife, path: "/cook" },
-    { label: "Đặt món", icon: ShoppingCart, path: "/order" },
+    { label: "Khám phá", icon: HouseIcon, path: "/home" },
+    { label: "Nấu ăn", icon: ForkKnifeIcon, path: "/cook" },
+    { label: "Đặt món", icon: ShoppingCartIcon, path: "/order" },
 ];
 
 const BottomNav: React.FC = () => {

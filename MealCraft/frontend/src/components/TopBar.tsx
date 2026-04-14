@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Lightning, MagnifyingGlass } from "@phosphor-icons/react";
+import { LightningIcon, MagnifyingGlassIcon } from "@phosphor-icons/react";
 import { Avatar, AvatarFallback } from "../components/ui/avatar";
 
 interface TopBarProps {
@@ -22,7 +22,7 @@ const TopBar: React.FC<TopBarProps> = ({ onSearchClick }) => {
                     className="flex items-center gap-2 cursor-pointer bg-transparent border-none p-0 focus:outline-none focus:ring-2 focus:ring-primary rounded-md"
                     aria-label="MealCraft - Trang chủ"
                 >
-                    <Lightning weight="duotone" size={28} className="text-foreground" />
+                    <LightningIcon weight="duotone" size={28} className="text-foreground" />
                     <span className="font-sans font-bold text-lg text-foreground tracking-tight">
                         MealCraft
                     </span>
@@ -34,7 +34,7 @@ const TopBar: React.FC<TopBarProps> = ({ onSearchClick }) => {
                         className="p-2 rounded-full hover:bg-gray-100 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
                         aria-label="Tìm kiếm"
                     >
-                        <MagnifyingGlass
+                        <MagnifyingGlassIcon
                             weight="duotone"
                             size={24}
                             className="text-foreground"
