@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Clock, Fire, ArrowRight } from "@phosphor-icons/react";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "../components/ui/badge";
 import TopBar from "../components/TopBar";
 import BottomNav from "../components/BottomNav";
 import Footer from "../components/Footer";
-import { recipes } from "../data/recipes";
+import { recipes } from "../data/recipe";
 
 const categoryFilters = ["Tất cả", "Châu Á"];
 
