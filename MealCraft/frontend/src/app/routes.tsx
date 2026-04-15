@@ -7,6 +7,7 @@ import { OrderFood } from "./components/OrderFood";
 import { Login } from "./components/Login";
 import { Register } from "./components/Register";
 import { MealDetail } from "./components/MealDetail";
+import { ComingSoon } from "./components/CommingSoon";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ export const router = createBrowserRouter([
       { path: "ingredients", Component: IngredientFinder },
       { path: "order-food", Component: OrderFood },
       { path: "group-chat", Component: GroupChat },
+      { path: "coming-soon", Component: ComingSoon },
     ],
   },
 ]);

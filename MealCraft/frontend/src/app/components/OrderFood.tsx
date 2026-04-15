@@ -3,49 +3,11 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Card } from './ui/card';
 import { Avatar, AvatarFallback } from './ui/avatar';
-import { MapPin, Clock, Filter, Zap, ChevronRight } from 'lucide-react';
+// Added Plus icon
+import { MapPin, Clock, Filter, Zap, ChevronRight, Plus } from 'lucide-react'; 
 import { useNavigate } from 'react-router';
 import { useMode } from '../contexts/ModeContext';
-
-interface FoodGroup {
-  id: string;
-  category: string;
-  title: string;
-  location: string;
-  time: string;
-  memberCount: number;
-  memberAvatars: string[];
-}
-
-const availableGroups: FoodGroup[] = [
-  {
-    id: '1',
-    category: 'Món Việt • Phở',
-    title: 'Nhóm ăn phở',
-    location: 'Toà nhà Keangnam, Mễ Trì',
-    time: '12:30 PM',
-    memberCount: 25,
-    memberAvatars: ['M', 'A', 'T'],
-  },
-  {
-    id: '2',
-    category: 'Món Ý • Pizza',
-    title: 'Trưa nay ăn Pizza ko a?',
-    location: 'Lotte Center, Liễu Giai',
-    time: '01:15 PM',
-    memberCount: 13,
-    memberAvatars: ['L', 'H'],
-  },
-  {
-    id: '3',
-    category: 'Ăn nhanh • Bánh mì',
-    title: 'Cho đi thêm Bánh Mì Huỳnh Hoa',
-    location: 'Vincom Center Bà Triều',
-    time: '12:00 PM',
-    memberCount: 58,
-    memberAvatars: ['K', 'N', 'P', 'Q'],
-  },
-];
+import { availableGroups } from './data/FoodGroup';
 
 export function OrderFood() {
   const navigate = useNavigate();
@@ -53,6 +15,11 @@ export function OrderFood() {
   const [time, setTime] = useState('');
   const [preference, setPreference] = useState('');
   const { mode } = useMode();
+
+  // Function to handle "Coming Soon"
+  const handleCreateGroup = () => {
+    navigate('/coming-soon');
+  };
 
   if (mode === 'web') {
     return (
@@ -67,9 +34,20 @@ export function OrderFood() {
                 </div>
                 <h2 className="text-3xl font-bold">Đặt món nhóm</h2>
               </div>
-              <button className="p-3 hover:bg-gray-100 rounded-full transition-colors">
-                <Filter className="w-6 h-6 text-gray-600" />
-              </button>
+              <div className="flex items-center gap-3">
+                {/* Web Create Button in Header */}
+                <Button 
+                  onClick={handleCreateGroup}
+                  variant="outline" 
+                  className="flex items-center gap-2 border-green-500 text-green-600 hover:bg-green-50 px-6 py-6 rounded-xl font-bold"
+                >
+                  <Plus className="w-5 h-5" />
+                  Tạo nhóm mới
+                </Button>
+                <button className="p-3 hover:bg-gray-100 rounded-full transition-colors">
+                  <Filter className="w-6 h-6 text-gray-600" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -84,7 +62,7 @@ export function OrderFood() {
                   Nhập thông tin để tìm những người đang cùng đặt món tại khu vực của bạn.
                 </p>
 
-                {/* Location Input */}
+                {/* Inputs remain same... */}
                 <div className="mb-4">
                   <p className="text-sm font-medium mb-3">Vị trí của bạn</p>
                   <div className="relative">
@@ -98,7 +76,6 @@ export function OrderFood() {
                   </div>
                 </div>
 
-                {/* Time Input */}
                 <div className="mb-4">
                   <p className="text-sm font-medium mb-3">Thời gian</p>
                   <div className="relative">
@@ -112,7 +89,6 @@ export function OrderFood() {
                   </div>
                 </div>
 
-                {/* Preference Input */}
                 <div className="mb-6">
                   <p className="text-sm font-medium mb-3">Sở thích</p>
                   <Input
@@ -123,10 +99,19 @@ export function OrderFood() {
                   />
                 </div>
 
-                {/* Search Button */}
-                <Button className="w-full bg-green-500 hover:bg-green-600 text-white rounded-xl py-6 font-semibold text-base">
-                  Tìm nhóm ngay
-                </Button>
+                {/* Action Buttons */}
+                <div className="space-y-3">
+                  <Button className="w-full bg-green-500 hover:bg-green-600 text-white rounded-xl py-6 font-semibold text-base">
+                    Tìm nhóm ngay
+                  </Button>
+                  <Button 
+                    onClick={handleCreateGroup}
+                    variant="ghost" 
+                    className="w-full text-green-600 hover:text-green-700 hover:bg-green-100 py-6"
+                  >
+                    Bạn muốn tự mở nhóm? Tạo ngay
+                  </Button>
+                </div>
               </div>
             </div>
 
@@ -145,7 +130,6 @@ export function OrderFood() {
                     key={group.id}
                     className="p-6 border border-gray-200 rounded-2xl hover:shadow-lg transition-shadow cursor-pointer"
                   >
-                    {/* Header */}
                     <div className="flex items-center justify-between mb-4">
                       <span className="text-sm font-medium text-green-600 bg-green-50 px-4 py-2 rounded-full">
                         {group.category}
@@ -155,16 +139,13 @@ export function OrderFood() {
                       </span>
                     </div>
 
-                    {/* Title */}
                     <h4 className="font-bold text-lg mb-3">{group.title}</h4>
 
-                    {/* Location */}
                     <div className="flex items-center gap-2 text-gray-500 mb-5">
                       <MapPin className="w-5 h-5" />
                       <span>{group.location}</span>
                     </div>
 
-                    {/* Members and Button */}
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <div className="flex -space-x-2">
@@ -198,6 +179,7 @@ export function OrderFood() {
     );
   }
 
+  // MOBILE VIEW
   return (
     <div className="pb-4 bg-white min-h-full">
       {/* Header */}
@@ -208,7 +190,18 @@ export function OrderFood() {
           </div>
           <h2 className="text-lg font-bold">Đặt món nhóm</h2>
         </div>
-        <Filter className="w-6 h-6 text-gray-600" />
+        <div className="flex items-center gap-2">
+          {/* Mobile Create Group Icon Button */}
+          <Button 
+            onClick={handleCreateGroup}
+            variant="outline" 
+            size="icon" 
+            className="rounded-full border-green-500 text-green-600"
+          >
+            <Plus className="w-5 h-5" />
+          </Button>
+          <Filter className="w-6 h-6 text-gray-600" />
+        </div>
       </div>
 
       {/* Find Group Section */}
@@ -218,7 +211,7 @@ export function OrderFood() {
           Nhập thông tin để tìm những người đang cùng đặt món tại khu vực của bạn.
         </p>
 
-        {/* Location Input */}
+        {/* Inputs remain same... */}
         <div className="mb-3">
           <p className="text-sm font-medium mb-2">Vị trí của bạn</p>
           <div className="relative">
@@ -232,7 +225,6 @@ export function OrderFood() {
           </div>
         </div>
 
-        {/* Time and Preference */}
         <div className="grid grid-cols-2 gap-3 mb-4">
           <div>
             <p className="text-sm font-medium mb-2">Thời gian</p>
@@ -257,13 +249,22 @@ export function OrderFood() {
           </div>
         </div>
 
-        {/* Search Button */}
-        <Button className="w-full bg-green-500 hover:bg-green-600 text-white rounded-xl py-6 font-semibold">
-          Tìm nhóm ngay
-        </Button>
+        {/* Search and Create Buttons for Mobile */}
+        <div className="flex flex-col gap-2">
+          <Button className="w-full bg-green-500 hover:bg-green-600 text-white rounded-xl py-6 font-semibold">
+            Tìm nhóm ngay
+          </Button>
+          <Button 
+            onClick={handleCreateGroup}
+            variant="outline" 
+            className="w-full border-green-500 text-green-600 rounded-xl py-6 font-semibold bg-transparent"
+          >
+            + Tạo nhóm mới
+          </Button>
+        </div>
       </div>
 
-      {/* Available Groups */}
+      {/* Available Groups remain same... */}
       <div className="px-4">
         <div className="flex items-center justify-between mb-4">
           <h3 className="font-bold text-lg">Các nhóm đang chờ</h3>
@@ -278,7 +279,6 @@ export function OrderFood() {
               key={group.id}
               className="p-4 border border-gray-200 rounded-xl hover:shadow-md transition-shadow cursor-pointer"
             >
-              {/* Header */}
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs font-medium text-green-600 bg-green-50 px-3 py-1 rounded-full">
                   {group.category}
@@ -288,16 +288,13 @@ export function OrderFood() {
                 </span>
               </div>
 
-              {/* Title */}
               <h4 className="font-bold text-base mb-2">{group.title}</h4>
 
-              {/* Location */}
               <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
                 <MapPin className="w-4 h-4" />
                 <span>{group.location}</span>
               </div>
 
-              {/* Members and Button */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="flex -space-x-2">
